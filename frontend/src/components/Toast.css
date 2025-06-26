@@ -1,0 +1,121 @@
+/* frontend/src/components/Toast.css */
+
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--secondary-bg-color);
+  color: var(--text-color);
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 90%;
+}
+
+.toast-container.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.toast-container.success {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.toast-container.error {
+  background-color: var(--error-color); /* Red */
+  color: white;
+}
+
+.toast-container.info {
+  background-color: #2196F3; /* Blue */
+  color: white;
+}
+
+.toast-container.warning {
+  background-color: #ff9800; /* Orange */
+  color: white;
+}
+
+.toast-message p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.toast-dismiss-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 10px;
+  line-height: 1;
+  padding: 0 5px;
+}
+
+.toast-actions {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.btn-toast {
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-toast.confirm {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-toast.confirm:hover {
+  background-color: #45a049;
+}
+
+.btn-toast.cancel {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-toast.cancel:hover {
+  background-color: #da190b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .toast-container {
+    bottom: 15px;
+    max-width: 95%;
+    padding: 12px 15px;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .toast-message {
+    width: 100%;
+  }
+  .toast-actions {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  .btn-toast {
+    flex: 1;
+  }
+}

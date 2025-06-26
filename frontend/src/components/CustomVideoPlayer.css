@@ -1,0 +1,157 @@
+/* frontend/src/components/CustomVideoPlayer.css */
+
+.custom-video-player-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* أو أي حجم مناسب */
+    background-color: #000;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: none; /* إخفاء مؤشر الماوس فوق الفيديو لزيادة التركيز */
+}
+
+.custom-video-element {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.custom-video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* لتمرير أحداث الماوس إلى الفيديو عندما تكون غير مرئية */
+}
+
+.custom-video-controls.visible {
+    opacity: 1;
+    pointer-events: all; /* لتلقي أحداث الماوس عندما تكون مرئية */
+}
+
+.custom-video-player-container:hover .custom-video-controls {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.controls-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.play-pause-btn,
+.mute-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.play-pause-btn:hover,
+.mute-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.progress-bar-wrapper {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    -webkit-appearance: none; /* لإخفاء المظهر الافتراضي */
+    height: 8px;
+    background: #555;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.2s ease-in-out;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-color-1); /* استخدم اللون المميز للمقبض */
+    cursor: pointer;
+    border: none;
+}
+
+.progress-bar::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-color-1);
+    cursor: pointer;
+    border: none;
+}
+
+.time-display {
+    color: white;
+    font-size: 0.9rem;
+    white-space: nowrap; /* منع النص من الالتفاف */
+}
+
+.volume-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.volume-slider {
+    width: 80px; /* عرض شريط التحكم بالصوت */
+    -webkit-appearance: none;
+    height: 6px;
+    background: #555;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-color-1);
+    cursor: pointer;
+    border: none;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-color-1);
+    cursor: pointer;
+    border: none;
+}
+
+.security-note {
+    font-size: 0.85rem;
+    color: #f0f2f5;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    text-align: center;
+    pointer-events: none; /* لجعلها غير قابلة للتفاعل مع الماوس */
+    z-index: 10;
+}

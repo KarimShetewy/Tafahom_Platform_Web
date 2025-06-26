@@ -1,0 +1,164 @@
+/* frontend/src/components/WalletPage.css */
+
+.wallet-page {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    min-height: calc(100vh - 80px); /* Adjust based on navbar height */
+    padding-bottom: 60px;
+}
+
+.wallet-container {
+    padding: 40px 20px;
+    background-color: var(--secondary-bg-color);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: right; /* RTL support */
+}
+
+.wallet-container h1 {
+    font-size: 2.8rem;
+    color: var(--heading-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.wallet-summary-card {
+    background-color: var(--primary-bg-color);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.wallet-summary-card h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color-1);
+    margin-bottom: 15px;
+}
+
+.current-balance {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--accent-color-2);
+}
+
+.charge-wallet-section {
+    background-color: var(--primary-bg-color);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.charge-wallet-section h2 {
+    font-size: 2rem;
+    color: var(--heading-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.charge-wallet-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--heading-color);
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-background-color);
+    color: var(--text-color);
+    font-size: 1.05rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: var(--accent-color-1);
+    box-shadow: 0 0 0 0.2rem rgba(var(--accent-color-1-rgb), 0.25);
+    outline: none;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+}
+
+.error-message-box {
+    background-color: rgba(var(--error-color-rgb), 0.2);
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.charge-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: var(--accent-color-2);
+    color: var(--button-text-color);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(var(--accent-color-2-rgb), 0.3);
+    transition: all 0.3s ease;
+}
+
+.charge-btn:hover {
+    filter: brightness(90%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(var(--accent-color-2-rgb), 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .wallet-container {
+        padding: 30px 15px;
+        margin: 20px auto;
+    }
+    .wallet-container h1 {
+        font-size: 2.2rem;
+    }
+    .wallet-summary-card h3 {
+        font-size: 1.3rem;
+    }
+    .current-balance {
+        font-size: 2.5rem;
+    }
+    .charge-wallet-section h2 {
+        font-size: 1.8rem;
+    }
+    .charge-btn {
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wallet-container {
+        padding: 20px 10px;
+    }
+    .wallet-container h1 {
+        font-size: 2rem;
+    }
+    .current-balance {
+        font-size: 2rem;
+    }
+}

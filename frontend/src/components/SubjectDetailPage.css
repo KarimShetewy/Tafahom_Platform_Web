@@ -1,0 +1,284 @@
+/* frontend/src/components/SubjectDetailPage.css */
+
+.subject-detail-page {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    min-height: calc(100vh - 80px); /* Adjust based on navbar height */
+    padding-bottom: 60px;
+}
+
+.subject-hero-section {
+    background-color: var(--secondary-bg-color);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 40px;
+}
+
+.subject-hero-section h1 {
+    font-size: 3.5rem;
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.subject-level-info {
+    font-size: 1.5rem;
+    color: var(--accent-color-1);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.subject-description {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    line-height: 1.7;
+}
+
+.subject-cta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.subject-cta .btn {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+}
+
+.subject-cta .btn-primary {
+    background-color: var(--accent-color-1);
+    color: var(--button-text-color);
+}
+
+.subject-cta .btn-secondary {
+    background-color: var(--accent-color-2);
+    color: var(--button-text-color);
+}
+
+/* Common Section Styles (reused from Dashboard.css or similar) */
+.subject-section {
+    padding: 40px 0;
+}
+
+.subject-section .section-title {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    font-weight: 700;
+}
+
+.subject-section .section-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: var(--accent-color-1);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Grid styles (reused from Dashboard.css) */
+.courses-grid, .teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Course Card styles (reused from HomePage.css or CourseDetailPage.css if consistent) */
+.course-card {
+    background-color: var(--secondary-bg-color);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align content to the right */
+    text-align: right;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.course-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.course-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.course-title {
+    font-size: 1.3rem;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.course-teacher {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.course-meta-info {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.course-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto; /* Push to bottom */
+    padding-top: 10px; /* Space from above content */
+    border-top: 1px solid var(--border-color); /* Separator */
+}
+
+.course-price {
+    font-size: 1.1rem;
+    color: var(--accent-color-1);
+    font-weight: bold;
+}
+
+.course-status {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.course-status.enrolled {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.course-status.not-enrolled {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+
+/* Teacher Card styles (reused from HomePage.css) */
+.teacher-card {
+    background-color: var(--secondary-bg-color);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teacher-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.teacher-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--accent-color-2);
+}
+
+.teacher-card h3 {
+    font-size: 1.4rem;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.teacher-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .subject-hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .subject-level-info {
+        font-size: 1.2rem;
+    }
+    .subject-description {
+        font-size: 1rem;
+    }
+    .subject-cta {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .subject-cta .btn {
+        width: 100%;
+    }
+    .subject-section .section-title {
+        font-size: 2rem;
+    }
+    .courses-grid, .teachers-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .subject-hero-section {
+        padding: 40px 15px;
+    }
+    .subject-hero-section h1 {
+        font-size: 2rem;
+    }
+    .subject-level-info {
+        font-size: 1rem;
+    }
+    .subject-description {
+        font-size: 0.9rem;
+    }
+    .subject-section .section-title {
+        font-size: 1.8rem;
+    }
+    .course-card, .teacher-card {
+        padding: 15px;
+    }
+    .course-title {
+        font-size: 1.1rem;
+    }
+    .teacher-image {
+        width: 100px;
+        height: 100px;
+    }
+    .teacher-card h3 {
+        font-size: 1.2rem;
+    }
+}

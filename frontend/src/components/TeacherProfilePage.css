@@ -1,0 +1,293 @@
+/* frontend/src/components/TeacherProfilePage.css */
+
+.teacher-profile-page {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    min-height: calc(100vh - 80px); /* Adjust based on navbar height */
+    padding-bottom: 60px;
+}
+
+.teacher-hero-section {
+    background-color: var(--secondary-bg-color);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.teacher-profile-image-wrapper {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border: 5px solid var(--accent-color-1);
+    flex-shrink: 0;
+}
+
+.teacher-profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.teacher-info-content {
+    text-align: center;
+    max-width: 700px;
+}
+
+.teacher-info-content h1 {
+    font-size: 3rem;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.teacher-specialty {
+    font-size: 1.5rem;
+    color: var(--accent-color-2);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.teacher-contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    background-color: var(--primary-bg-color);
+    padding: 8px 15px;
+    border-radius: 25px;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.teacher-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.teacher-social-links a {
+    color: var(--accent-color-1);
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.teacher-social-links a:hover {
+    color: var(--heading-color);
+    text-decoration: underline;
+}
+
+/* General Section Styles (reused from Dashboard.css or similar) */
+.teacher-section {
+    padding: 40px 0;
+}
+
+.teacher-section .section-title {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    font-weight: 700;
+}
+
+.teacher-section .section-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: var(--accent-color-1);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.content-box {
+    background-color: var(--secondary-bg-color);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    margin-bottom: 25px;
+    text-align: right;
+    color: var(--text-color);
+}
+
+.content-box h3 {
+    font-size: 1.4rem;
+    color: var(--accent-color-1);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.content-box p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Course Grid styles (reused from HomePage.css or CourseDetailPage.css if consistent) */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.course-card {
+    background-color: var(--secondary-bg-color);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align content to the right */
+    text-align: right;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.course-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.course-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.course-title {
+    font-size: 1.3rem;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.course-teacher {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.course-meta-info {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.course-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+}
+
+.course-price {
+    font-size: 1.1rem;
+    color: var(--accent-color-1);
+    font-weight: bold;
+}
+
+.course-status {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.course-status.enrolled {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.course-status.not-enrolled {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .teacher-hero-section {
+        padding: 40px 15px;
+    }
+    .teacher-profile-image-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+    .teacher-info-content h1 {
+        font-size: 2.5rem;
+    }
+    .teacher-specialty {
+        font-size: 1.2rem;
+    }
+    .teacher-contact-info, .teacher-social-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .teacher-section .section-title {
+        font-size: 2rem;
+    }
+    .content-box {
+        padding: 20px;
+    }
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .teacher-hero-section {
+        padding: 30px 10px;
+    }
+    .teacher-profile-image-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+    .teacher-info-content h1 {
+        font-size: 2rem;
+    }
+    .teacher-specialty {
+        font-size: 1rem;
+    }
+    .teacher-section .section-title {
+        font-size: 1.8rem;
+    }
+    .content-box {
+        padding: 15px;
+    }
+}

@@ -1,0 +1,558 @@
+/* frontend/src/components/HomePage.css */
+
+.homepage {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    min-height: calc(100vh - 80px); /* Adjust based on navbar height */
+}
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align content to the right */
+    text-align: right; /* Text alignment for Arabic */
+    padding-top: 80px; /* Space for fixed navbar */
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse; /* Image on right, content on left for RTL */
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 40px 20px; /* Inner padding */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the right side of the content box */
+    text-align: right;
+    flex-grow: 1;
+    padding: 20px 0;
+    max-width: 65%; /* Adjust content width */
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.hero-content h3 {
+    font-size: 1.5em;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align buttons to the right */
+    width: 100%;
+}
+
+.hero-cta .btn {
+    padding: 15px 35px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.hero-cta .btn-primary {
+    background-color: var(--accent-color-1);
+    color: var(--button-text-color);
+    box-shadow: 0 5px 15px rgba(var(--accent-color-1-rgb), 0.4);
+}
+
+.hero-cta .btn-primary:hover {
+    filter: brightness(90%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(var(--accent-color-1-rgb), 0.6);
+}
+
+.hero-cta .btn-secondary {
+    background-color: var(--accent-color-2);
+    color: var(--button-text-color);
+    box-shadow: 0 5px 15px rgba(var(--accent-color-2-rgb), 0.4);
+}
+
+.hero-cta .btn-secondary:hover {
+    filter: brightness(90%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(var(--accent-color-2-rgb), 0.6);
+}
+
+.hero-image-wrapper {
+    flex-shrink: 0;
+    width: 450px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    border: 4px solid var(--accent-color-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, 
+                                rgba(var(--primary-bg-color-rgb), 0.9) 0%,
+                                rgba(var(--primary-bg-color-rgb), 0.7) 50%, 
+                                rgba(var(--heading-color-rgb), 0.3) 100%);
+    z-index: 0;
+}
+
+/* Background particles/pattern */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(var(--accent-color-1-rgb), 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(var(--accent-color-2-rgb), 0.2) 0%, transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(var(--heading-color-rgb), 0.08) 0%, transparent 40%);
+    background-size: 800px 800px;
+    opacity: 0.9;
+    animation: moveBackground 30s linear infinite;
+    z-index: 1;
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0% 0%, 100% 100%, 50% 50%;
+    }
+    to {
+        background-position: 100% 100%, 0% 0%, 0% 0%;
+    }
+}
+
+
+/* General Section Styles for Homepage */
+.homepage-section {
+    padding: 60px 0;
+    background-color: var(--primary-bg-color); /* Default background for sections */
+}
+
+.homepage-section.featured-teachers,
+.homepage-section.featured-courses {
+    background-color: var(--secondary-bg-color); /* Alternate background for distinction */
+    margin-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+}
+
+
+.section-title {
+    font-size: 2.8em;
+    color: var(--heading-color);
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: var(--accent-color-1);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.section-description {
+    font-size: 1.1em;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+    line-height: 1.7;
+}
+
+
+/* Teachers Grid */
+.teachers-grid, .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+.teacher-card, .course-card {
+    background-color: var(--primary-bg-color); /* Card background */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content for teacher cards */
+    text-align: center;
+}
+
+.teacher-card:hover, .course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.teacher-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border: 4px solid var(--accent-color-2); /* Border for teacher image */
+}
+
+.teacher-card h3 {
+    font-size: 1.4em;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.teacher-card p {
+    font-size: 0.95em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.view-all-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.view-all-link .btn {
+    padding: 12px 30px;
+    font-size: 1.1em;
+}
+
+
+/* Courses Grid (specific styles) */
+.course-card {
+    align-items: flex-end; /* Align content to the right */
+    text-align: right;
+}
+
+.course-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.course-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.course-title {
+    font-size: 1.3em;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.course-teacher {
+    font-size: 0.95em;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.course-meta-info {
+    font-size: 0.85em;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.course-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto; /* Push to bottom */
+    padding-top: 10px; /* Space from above content */
+    border-top: 1px solid var(--border-color); /* Separator */
+}
+
+.course-price {
+    font-size: 1.1em;
+    color: var(--accent-color-1);
+    font-weight: bold;
+}
+
+.course-status {
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.course-status.enrolled {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.course-status.not-enrolled {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+
+/* Course Filter Section */
+.courses-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background-color: var(--input-background-color);
+    color: var(--text-color);
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-select:focus {
+    border-color: var(--accent-color-1);
+    box-shadow: 0 0 0 0.2rem rgba(var(--accent-color-1-rgb), 0.25);
+    outline: none;
+}
+
+.clear-filter-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 8px;
+}
+
+
+/* Join Team Section */
+.join-team-section {
+    padding: 60px 0;
+    background-color: var(--accent-color-1);
+    color: var(--button-text-color);
+    text-align: center;
+}
+
+.join-team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.join-team-content h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.join-team-content p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.join-team-btn {
+    padding: 15px 35px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    background-color: var(--accent-color-2);
+    color: var(--button-text-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.join-team-btn:hover {
+    filter: brightness(90%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    .hero-content {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    .hero-cta {
+        justify-content: center;
+    }
+    .hero-image-wrapper {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+    .homepage-section.featured-teachers,
+    .homepage-section.featured-courses {
+        padding: 40px 15px;
+    }
+    .teachers-grid, .courses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .hero-content h3 {
+        font-size: 1.2em;
+    }
+    .hero-cta .btn {
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+    .homepage-section .section-title {
+        font-size: 2.2em;
+    }
+    .homepage-section .section-description {
+        font-size: 1em;
+    }
+    .teachers-grid, .courses-grid {
+        grid-template-columns: 1fr; /* Single column */
+    }
+    .teacher-card, .course-card {
+        padding: 15px;
+    }
+    .teacher-image {
+        width: 120px;
+        height: 120px;
+    }
+    .teacher-card h3 {
+        font-size: 1.2em;
+    }
+    .course-image {
+        height: 150px;
+    }
+    .course-title {
+        font-size: 1.1em;
+    }
+    .courses-filter {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .filter-select, .clear-filter-btn {
+        width: 90%;
+        max-width: 300px;
+    }
+    .join-team-content h2 {
+        font-size: 2.2em;
+    }
+    .join-team-content p {
+        font-size: 1em;
+    }
+    .join-team-btn {
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding-top: 60px;
+        min-height: 450px;
+    }
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content h3 {
+        font-size: 1em;
+    }
+    .hero-cta {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero-cta .btn {
+        width: 100%;
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    .hero-image-wrapper {
+        max-width: 250px;
+    }
+    .homepage-section {
+        padding: 40px 0;
+    }
+    .section-title {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+    }
+    .section-description {
+        font-size: 0.9em;
+    }
+    .teacher-image {
+        width: 100px;
+        height: 100px;
+    }
+    .course-image {
+        height: 120px;
+    }
+    .course-price, .course-status {
+        font-size: 0.8em;
+    }
+    .join-team-content h2 {
+        font-size: 1.8em;
+    }
+    .join-team-btn {
+        font-size: 1em;
+        padding: 10px 20px;
+        width: 90%;
+    }
+}

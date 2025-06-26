@@ -1,0 +1,151 @@
+/* frontend/src/components/Dashboard.css */
+
+.dashboard-container {
+    padding: 40px 20px;
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    min-height: calc(100vh - 80px); /* Adjust based on navbar height */
+}
+
+.dashboard-container h1 {
+    font-size: 2.8rem;
+    color: var(--heading-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.dashboard-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.summary-card {
+    background-color: var(--secondary-bg-color);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.summary-card h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color-1);
+    margin-bottom: 10px;
+}
+
+.summary-card p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.dashboard-actions, .dashboard-sections {
+    margin-top: 50px;
+}
+
+.dashboard-actions h2, .dashboard-sections h2 {
+    font-size: 2rem;
+    color: var(--heading-color);
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.dashboard-actions h2::after, .dashboard-sections h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color-2);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.action-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.action-btn {
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Specific button colors */
+.action-btn.btn-primary {
+    background-color: var(--accent-color-1);
+    color: var(--button-text-color);
+}
+
+.action-btn.btn-secondary {
+    background-color: var(--accent-color-2);
+    color: var(--button-text-color);
+}
+
+/* List / Table Styles for dashboard sections */
+.section-list {
+    background-color: var(--secondary-bg-color);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.list-item-title {
+    font-size: 1.1rem;
+    color: var(--heading-color);
+    font-weight: 600;
+}
+
+.list-item-details {
+    font-size: 0.95rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 20px 10px;
+    }
+    .dashboard-summary {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+    .action-buttons-grid {
+        grid-template-columns: 1fr;
+    }
+    .dashboard-container h1 {
+        font-size: 2.2rem;
+    }
+    .dashboard-actions h2, .dashboard-sections h2 {
+        font-size: 1.8rem;
+    }
+}

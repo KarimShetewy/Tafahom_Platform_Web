@@ -1,0 +1,97 @@
+/* frontend/src/components/TeacherMyCoursesPage.css */
+
+.teacher-my-courses-page {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    min-height: calc(100vh - 80px);
+    padding-bottom: 60px;
+}
+
+.teacher-my-courses-page .dashboard-container {
+    padding-top: 40px;
+}
+
+.teacher-my-courses-page h1 {
+    font-size: 2.8rem;
+    color: var(--heading-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.teacher-my-courses-page .dashboard-actions {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.teacher-my-courses-page .dashboard-actions .btn {
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.course-card .course-actions-teacher {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
+    gap: 10px; /* Space between buttons */
+    flex-wrap: wrap;
+}
+
+.course-card .course-actions-teacher .btn {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 5px;
+    flex-grow: 1; /* Allow buttons to expand */
+    text-align: center;
+}
+
+.course-card .course-actions-teacher .course-status {
+    flex-shrink: 0;
+    margin-left: auto; /* Push status to the right */
+}
+
+.course-status.published {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.course-status.draft {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+/* Inherit grid styles from Dashboard.css */
+/* Inherit course-card styles from HomePage.css/CourseDetailPage.css */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .teacher-my-courses-page .dashboard-container {
+        padding: 20px 10px;
+    }
+    .teacher-my-courses-page h1 {
+        font-size: 2.2rem;
+    }
+    .teacher-my-courses-page .dashboard-actions .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    .course-card .course-actions-teacher {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .course-card .course-actions-teacher .btn {
+        width: 100%;
+        margin-left: 0;
+    }
+    .course-card .course-actions-teacher .course-status {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
+}

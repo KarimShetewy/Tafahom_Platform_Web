@@ -1,0 +1,193 @@
+/* frontend/src/components/LoginPage.css */
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px); /* Adjust based on navbar height */
+    background-color: var(--primary-bg-color);
+    padding: 20px;
+}
+
+.login-section {
+    width: 100%;
+    max-width: 1000px;
+    background-color: var(--secondary-bg-color);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse; /* Image on right, form on left */
+    align-items: stretch; /* Stretch children to fill height */
+}
+
+.login-image-wrapper {
+    flex: 1;
+    background-color: var(--accent-color-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    color: var(--button-text-color);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.1) 0%, transparent 70%);
+    z-index: 1;
+}
+
+.login-illustration {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+.image-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.login-form-wrapper {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+    text-align: right; /* Right-align for Arabic */
+}
+
+.login-form-wrapper h2 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--heading-color);
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-background-color);
+    color: var(--text-color);
+    font-size: 1.05rem;
+}
+
+.form-group input:focus {
+    border-color: var(--accent-color-1);
+    box-shadow: 0 0 0 0.2rem rgba(var(--accent-color-1-rgb), 0.25);
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.register-prompt, .forgot-password {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.register-link, .forgot-password-link {
+    color: var(--accent-color-2);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.register-link:hover, .forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+}
+
+.error-message-box {
+    background-color: rgba(var(--error-color-rgb), 0.2);
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .login-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .login-image-wrapper {
+        width: 100%;
+        max-width: 300px; /* Adjust max width for smaller screens */
+        padding: 20px;
+    }
+    .login-form-wrapper {
+        width: 100%;
+        padding: 30px;
+    }
+    .login-form-wrapper h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .login-illustration {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form-wrapper {
+        padding: 20px;
+    }
+    .login-form-wrapper h2 {
+        font-size: 1.8rem;
+    }
+    .image-title {
+        font-size: 1.4rem;
+    }
+}
